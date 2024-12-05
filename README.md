@@ -37,21 +37,20 @@ no colour will be substituted. Only bold, italic, ...
 
 
 ## How to get the library
-First you need to initialise the submodules:
+If you haven't cloned it already, clone with
+`git clone --recurse-submodules git@github.com:/BWindey/WiEnrich.git`.
+If you already cloned without the `--recurse-submodules` flag, use
 `git submodule update --init --recursive`.
 
-Next you need 2 things: the header file `include/wiEnrich.h` to include in your
-program files, and the code.
-There are 2 ways to include the code. When you're using this current DodonaCLIC
-repository, and have it locally on your pc, navigate to this folder,
-and run `make`.
-This will produce `lib/libwienrich.a`, which you can then use for your own
-program (compiling would be then something like `gcc main.c libwienrich.a`).
-
-You can also use the `wiEnrich.c` directly, but then you also need to include
-`submodules/wiTesting/wiAssert.h` in you project under that exact file-path.
-I'm sure you can figure that out, and modify file-paths where needed, but
-it is more work then using the make-file.
+With this repository cloned, you need 2 files from it: `wiEnrich.h` and the
+source code. The header file you can find in `include/`, the source code can be
+acquired in 2 ways:
+- run `make`, this will produce `lib/libwienrich.a`, which you can then use for
+    your own program (compiling would be then something like
+    `gcc main.c -L./ -lwienrich`).
+- use `src/wiEnrich.c` directly; you also need the file
+    `submodules/WiTesting/wiAssert.h` in your project then, as it is needed
+    by `src/wiEnrich.c`; I leave it to you to organise that.
 
 
 ## Limitations

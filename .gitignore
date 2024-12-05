@@ -1,2 +1,4 @@
 lib/*.a
 obj/
+.cache/
+compile_commands.json

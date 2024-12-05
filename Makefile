@@ -1,17 +1,23 @@
+# Makefile cheat-sheet:
+# $@ = make-goal that we're in
+# $< = first source-file passed to goal
+# $^ = all source-files passed to goal
+# $? = all source-files younger then goal, passed to goal
+
 # Compiler and flags
-CC = gcc
-CFLAGS = -Iinclude -Wall -Wextra -pedantic -O3
+CC := gcc
+CFLAGS := -Iinclude -Isubmodules/WiTesting -Wall -Wextra -pedantic -O3
 
 # Directories
-SRCDIR = src
-INCDIR = include
-OBJDIR = obj
-LIBDIR = lib
+SRCDIR := src
+INCDIR := include
+OBJDIR := obj
+LIBDIR := lib
 
 # Files
-SRC = $(SRCDIR)/wiEnrich.c
-OBJ = $(OBJDIR)/wiEnrich.o
-LIB = $(LIBDIR)/libwienrich.a
+SRC := $(SRCDIR)/wiEnrich.c
+OBJ := $(OBJDIR)/wiEnrich.o
+LIB := $(LIBDIR)/libwienrich.a
 
 # Default target to build the library
 all: $(LIB)

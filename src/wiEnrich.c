@@ -4,7 +4,7 @@
 #include <string.h>
 
 #include "../include/wiEnrich.h"
-#include "../../WiTesting/wiAssert.h"
+#include "../submodules/WiTesting/wiAssert.h"
 
 /* [/] is smallest pattern to search for, next smallest is [FRED] */
 #define MIN_PATTERN_LENGTH 3
